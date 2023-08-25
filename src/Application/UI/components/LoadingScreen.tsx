@@ -39,7 +39,7 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
         }
        // if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
     //    setFirefoxError(true);
-        } if (!detectWebGLContext()) {
+         if (!detectWebGLContext()) {
             setWebGLError(true);
         } else {
             setShowBiosInfo(true);
