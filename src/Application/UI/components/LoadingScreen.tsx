@@ -272,7 +272,7 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
                     </div>
                 </div>
             </div>
-            /**
+            {/*
             {firefoxError && (
                 <div
                     style={Object.assign({}, styles.popupContainer, {
@@ -319,7 +319,7 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
                     </div>
                 </div>
             )}
-            */
+            */}
             {webGLError && (
                 <div
                     style={Object.assign({}, styles.popupContainer, {
