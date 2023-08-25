@@ -67,8 +67,8 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
         setCounter(counter + 1);
     }, [loaded]);
 
-   {/* useEffect(() => {
-        if (progress >= 1 && !firefoxError && !webGLError) {
+    useEffect(() => {
+        if (progress >= 1 && !webGLError) {
             setDoneLoading(true);
 
             setTimeout(() => {
@@ -80,14 +80,6 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
         }
     }, [progress]);
 
-    useEffect(() => {
-        if (firefoxError) {
-            setTimeout(() => {
-                setFirefoxPopupOpacity(1);
-            }, 500);
-        }
-    }, [firefoxError]);
-*/}
     useEffect(() => {
         if (webGLError) {
             setTimeout(() => {
