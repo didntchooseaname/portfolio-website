@@ -10,13 +10,13 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
     const [overlayOpacity, setLoadingOverlayOpacity] = useState(1);
     const [loadingTextOpacity, setLoadingTextOpacity] = useState(1);
     const [startPopupOpacity, setStartPopupOpacity] = useState(0);
-    const [firefoxPopupOpacity, setFirefoxPopupOpacity] = useState(0);
+    // const [firefoxPopupOpacity, setFirefoxPopupOpacity] = useState(0);
     const [webGLErrorOpacity, setWebGLErrorOpacity] = useState(0);
 
     const [showBiosInfo, setShowBiosInfo] = useState(false);
     const [showLoadingResources, setShowLoadingResources] = useState(false);
     const [doneLoading, setDoneLoading] = useState(false);
-    const [firefoxError, setFirefoxError] = useState(false);
+    // const [firefoxError, setFirefoxError] = useState(false);
     const [webGLError, setWebGLError] = useState(false);
     const [counter, setCounter] = useState(0);
     const [resources] = useState<string[]>([]);
@@ -37,8 +37,8 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
         if (urlParams.has('debug')) {
             start();
         }
-        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-            setFirefoxError(true);
+       // if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+    //    setFirefoxError(true);
         } else if (!detectWebGLContext()) {
             setWebGLError(true);
         } else {
@@ -67,7 +67,7 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
         setCounter(counter + 1);
     }, [loaded]);
 
-    useEffect(() => {
+   {/* useEffect(() => {
         if (progress >= 1 && !firefoxError && !webGLError) {
             setDoneLoading(true);
 
@@ -87,7 +87,7 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
             }, 500);
         }
     }, [firefoxError]);
-
+*/}
     useEffect(() => {
         if (webGLError) {
             setTimeout(() => {
@@ -148,7 +148,7 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
                     <span className="blinking-cursor" />
                 </div>
             )}
-            {!firefoxError && !webGLError && (
+            {!webGLError && (
                 <div
                     style={Object.assign({}, styles.overlayText, {
                         opacity: loadingTextOpacity,
